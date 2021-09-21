@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Current Parks</h1>
+    <ul class="parks">
+    <% for(let i=0; i < info.length; i++) {%>
+        <li class="parks">            
+            <span><%= info[i].hikeName %></span>
+            <span><%= info[i].parkName %></span>
+            <span><%= info[i].parkState %></span>
+            <span><%= info[i].likes %></span>
+            <span class='fa fa-thumbs-up'></span>
+            <span class='fa fa-trash'></span>
+        </li>
+    <% } %>
+    </ul>
+
+    <h2>Add A Park:</h2>
+
+    <form action="/addPark" method="POST">
+        <input type="text" placeholder="Hike Name" name="hikeName">
+        <input type="text" placeholder="Park Name" name="parkName">
+        <input type="text" placeholder="State of Park" name="parkState">
+        <input type="submit">
+    </form>
+    
+
+    <script src='js/main.js'></script>
+</body>
+</html>
