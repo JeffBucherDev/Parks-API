@@ -31,9 +31,9 @@ app.get('/',(request, response)=>{
 
 app.post('/addPark', (request, response) => {
     db.collection('nationalparks').insertOne({
-        hikeName: request.body.hikeName, 
-        parkName: request.body.parkName,
-        parkState: request.body.parkState, 
+        hikeName: request.body.hikeName.trim(), 
+        parkName: request.body.parkName.trim(),
+        parkState: request.body.parkState.trim(), 
         likes: 0
     })
     .then(result => {
